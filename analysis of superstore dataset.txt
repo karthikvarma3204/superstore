@@ -1,0 +1,48 @@
+
+SELECT TOP 10
+    [Customer_Name], 
+    SUM(Sales) AS TotalSales
+FROM 
+    [Sample - Superstore]
+GROUP BY 
+    [Customer_Name]
+ORDER BY 
+    TotalSales DESC;
+
+
+SELECT 
+Category, 
+    AVG(Discount) AS AverageDiscount
+FROM 
+    [Sample - Superstore]
+GROUP BY 
+    Category;
+
+SELECT TOP 5
+    City, 
+    SUM(Sales) AS TotalSales
+FROM 
+    [Sample - Superstore]
+GROUP BY 
+    City
+ORDER BY 
+    TotalSales DESC;
+
+SELECT 
+    [Product_Name], 
+    SUM(Sales) AS TotalSales
+FROM 
+    [Sample - Superstore]
+GROUP BY 
+    [Product_Name]
+HAVING 
+    SUM(Sales) > 5000;
+
+
+SELECT 
+    [Ship_Mode], 
+    COUNT(*) AS NumberOfOrders
+FROM 
+    [Sample - Superstore]
+GROUP BY 
+    [Ship_Mode];
